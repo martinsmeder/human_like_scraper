@@ -1,6 +1,3 @@
-# Page to practice on:
-# https://camoufox.com/tests/buttonclick
-
 from camoufox.sync_api import Camoufox
 
 with Camoufox(humanize=True) as browser:
