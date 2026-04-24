@@ -8,11 +8,8 @@ with Camoufox(humanize=True) as browser:
         button.wait_for() # wait until a .button element exists and is visible
         box = button.bounding_box() # get the button's position and size
 
-        page.mouse.move(
-            box["x"] + box["width"] / 2,
-            box["y"] + box["height"] / 2,
-        )
-        page.mouse.click(
-            box["x"] + box["width"] / 2,
-            box["y"] + box["height"] / 2,
-        )
+        x = box["x"] + box["width"] / 2
+        y = box["y"] + box["height"] / 2
+
+        page.mouse.move(x, y)
+        page.mouse.click(x, y)
