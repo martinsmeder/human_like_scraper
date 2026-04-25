@@ -20,12 +20,14 @@ def click_link(page, name):
 
 
 def scroll_down(page):
-    for _ in range(6):
+    for _ in range(20):
+        if page.evaluate("innerHeight + scrollY >= document.body.scrollHeight - 5"):
+            break
         page.mouse.wheel(0, 1000)
         time.sleep(0.2)
 
 
-with Camoufox(humanize=True) as browser:
+with Camoufox(humanize=True, window=(1280, 900)) as browser:
     page = browser.new_page()
     page.goto("https://www.scrapethissite.com/pages/")
 
@@ -50,10 +52,12 @@ with Camoufox(humanize=True) as browser:
     page.wait_for_url("**/pages/forms/")
     page.wait_for_selector(".team")
     scroll_down(page)
-
+    time.sleep(0.5)
     click(page, page.locator("#per_page"))
     time.sleep(0.5)
-    page.locator("#per_page").select_option("100")
+    page.keyboard.press("End")
+    time.sleep(0.5)
+    page.keyboard.press("Enter")
     page.wait_for_url("**per_page=100**")
     page.wait_for_selector(".team")
 
@@ -71,6 +75,7 @@ with Camoufox(humanize=True) as browser:
             goal_diff: Number(e.querySelector(".diff").innerText)
         }))""")
 
+        scroll_down(page)
         next_link = page.locator('a[aria-label="Next"]')
         if not next_link.count():
             break
