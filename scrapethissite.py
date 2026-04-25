@@ -85,3 +85,6 @@ with Camoufox(humanize=True, window=(1280, 900)) as browser:
         page.wait_for_selector(".team")
 
     json.dump(teams, open("output/hockey_teams.json", "w"), indent=2)
+    time.sleep(1)
+    page.goto("https://www.scrapethissite.com/pages/")
+    time.sleep(1)
