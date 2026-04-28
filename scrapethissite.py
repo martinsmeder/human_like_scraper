@@ -101,7 +101,7 @@ def scrape_turtle_detail(frame):
     )
 
 
-with Camoufox(humanize=True, window=(1280, 900)) as browser:
+with Camoufox(humanize=True) as browser:
     page = browser.new_page()
     page.goto("https://www.scrapethissite.com/pages/")
 
