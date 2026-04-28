@@ -1,8 +1,15 @@
 import json
 import os
+import random
 import time
 
 from camoufox.sync_api import Camoufox
+
+
+def pause(min_s, max_s=None):
+    if max_s is None:
+        max_s = min_s
+    time.sleep(random.uniform(min_s, max_s))
 
 
 def click(page, target):
@@ -24,7 +31,24 @@ def scroll_down(page):
         if page.evaluate("innerHeight + scrollY >= document.body.scrollHeight - 5"):
             break
         page.mouse.wheel(0, 1000)
-        time.sleep(0.2)
+        pause(0.12, 0.28)
+
+
+def load_oscar_year(page, year):
+    click(page, page.locator(f'a.year-link[id="{year}"]'))
+    page.wait_for_function(
+        """year => {
+            const active_link = document.getElementById(year);
+            const loading = document.querySelector("#loading");
+            const rows = document.querySelectorAll("#table-body .film");
+            return active_link &&
+                active_link.classList.contains("active") &&
+                loading &&
+                getComputedStyle(loading).display === "none" &&
+                rows.length > 0;
+        }""",
+        arg=year,
+    )
 
 
 with Camoufox(humanize=True, window=(1280, 900)) as browser:
@@ -45,18 +69,18 @@ with Camoufox(humanize=True, window=(1280, 900)) as browser:
 
     os.makedirs("output", exist_ok=True)
     json.dump(countries, open("output/countries.json", "w"), indent=2)
-    time.sleep(1)
+    pause(0.7, 1.3)
     page.goto("https://www.scrapethissite.com/pages/")
 
     click_link(page, "Hockey Teams: Forms, Searching and Pagination")
     page.wait_for_url("**/pages/forms/")
     page.wait_for_selector(".team")
     scroll_down(page)
-    time.sleep(0.5)
+    pause(0.25, 0.6)
     click(page, page.locator("#per_page"))
-    time.sleep(0.5)
+    pause(0.2, 0.5)
     page.keyboard.press("End")
-    time.sleep(0.5)
+    pause(0.15, 0.4)
     page.keyboard.press("Enter")
     page.wait_for_url("**per_page=100**")
     page.wait_for_selector(".team")
@@ -85,6 +109,26 @@ with Camoufox(humanize=True, window=(1280, 900)) as browser:
         page.wait_for_selector(".team")
 
     json.dump(teams, open("output/hockey_teams.json", "w"), indent=2)
-    time.sleep(1)
+    pause(0.7, 1.3)
     page.goto("https://www.scrapethissite.com/pages/")
-    time.sleep(1)
+    pause(0.7, 1.3)
+
+    click_link(page, "Oscar Winning Films: AJAX and Javascript")
+    page.wait_for_url("**/pages/ajax-javascript/")
+    page.wait_for_selector(".year-link")
+
+    years = page.locator(".year-link").evaluate_all("els => els.map(e => e.id)")
+    films = []
+    for year in years:
+        pause(0.25, 0.6)
+        load_oscar_year(page, year)
+        pause(0.2, 0.5)
+        films += page.locator("#table-body .film").evaluate_all("""(els, year) => els.map(e => ({
+            year: Number(year),
+            title: e.querySelector(".film-title").innerText.trim(),
+            nominations: Number(e.querySelector(".film-nominations").innerText),
+            awards: Number(e.querySelector(".film-awards").innerText),
+            best_picture: Boolean(e.querySelector(".film-best-picture .glyphicon-flag"))
+        }))""", year)
+
+    json.dump(films, open("output/oscar_winning_films.json", "w"), indent=2)
