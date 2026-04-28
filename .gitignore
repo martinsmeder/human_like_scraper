@@ -1,4 +1,4 @@
-notes.txt
 venv/
 __pycache__
 .codex
+output/
