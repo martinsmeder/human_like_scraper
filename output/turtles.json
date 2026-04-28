@@ -1,0 +1,114 @@
+[
+  {
+    "family_name": "Carettochelyidae",
+    "common_name": "Pig-nosed turtle",
+    "summary": "The Carettochelyidae family of turtles \u2014 more commonly known as \"Pig-nosed turtle\" \u2014 were first discovered in 1887 by Boulenger.",
+    "discovered_year": 1887,
+    "discovered_by": "Boulenger",
+    "first_name": "Carettochelyidae"
+  },
+  {
+    "family_name": "Cheloniidae",
+    "common_name": "Sea turtles",
+    "summary": "The Cheloniidae family of turtles \u2014 more commonly known as \"Sea turtles\" \u2014 were first discovered in 1811 by Oppel.",
+    "discovered_year": 1811,
+    "discovered_by": "Oppel",
+    "first_name": "Cheloniidae"
+  },
+  {
+    "family_name": "Chelydridae",
+    "common_name": "Snapping turtles",
+    "summary": "The Chelydridae family of turtles \u2014 more commonly known as \"Snapping turtles\" \u2014 were first discovered in 1831 by Gray.",
+    "discovered_year": 1831,
+    "discovered_by": "Gray",
+    "first_name": "Chelydridae"
+  },
+  {
+    "family_name": "Dermatemydidae",
+    "common_name": "Central American river turtle",
+    "summary": "The Dermatemydidae family of turtles \u2014 more commonly known as \"Central American river turtle\" \u2014 were first discovered in 1870 by Gray.",
+    "discovered_year": 1870,
+    "discovered_by": "Gray",
+    "first_name": "Dermatemydidae"
+  },
+  {
+    "family_name": "Dermochelyidae",
+    "common_name": "Leatherback sea turtle",
+    "summary": "The Dermochelyidae family of turtles \u2014 more commonly known as \"Leatherback sea turtle\" \u2014 were first discovered in 1843 by Fitzinger.",
+    "discovered_year": 1843,
+    "discovered_by": "Fitzinger",
+    "first_name": "Dermochelyidae"
+  },
+  {
+    "family_name": "Emydidae",
+    "common_name": "Pond or water turtles",
+    "summary": "The Emydidae family of turtles \u2014 more commonly known as \"Pond or water turtles\" \u2014 were first discovered in 1815 by Rafinesque.",
+    "discovered_year": 1815,
+    "discovered_by": "Rafinesque",
+    "first_name": "Emydidae"
+  },
+  {
+    "family_name": "Geoemydidae",
+    "common_name": "Asian river, leaf, roofed or Asian box turtles",
+    "summary": "The Geoemydidae family of turtles \u2014 more commonly known as \"Asian river, leaf, roofed or Asian box turtles\" \u2014 were first discovered in 1868 by Theobald.",
+    "discovered_year": 1868,
+    "discovered_by": "Theobald",
+    "first_name": "Geoemydidae"
+  },
+  {
+    "family_name": "Kinosternidae",
+    "common_name": "Mud or musk turtles",
+    "summary": "The Kinosternidae family of turtles \u2014 more commonly known as \"Mud or musk turtles\" \u2014 were first discovered in 1857 by Agassiz.",
+    "discovered_year": 1857,
+    "discovered_by": "Agassiz",
+    "first_name": "Kinosternidae"
+  },
+  {
+    "family_name": "Platysternidae",
+    "common_name": "Big-headed turtle",
+    "summary": "The Platysternidae family of turtles \u2014 more commonly known as \"Big-headed turtle\" \u2014 were first discovered in 1869 by Gray.",
+    "discovered_year": 1869,
+    "discovered_by": "Gray",
+    "first_name": "Platysternidae"
+  },
+  {
+    "family_name": "Testudinidae",
+    "common_name": "Tortoises",
+    "summary": "The Testudinidae family of turtles \u2014 more commonly known as \"Tortoises\" \u2014 were first discovered in 1788 by Batsch.",
+    "discovered_year": 1788,
+    "discovered_by": "Batsch",
+    "first_name": "Testudinidae"
+  },
+  {
+    "family_name": "Trionychidae",
+    "common_name": "Softshell turtles",
+    "summary": "The Trionychidae family of turtles \u2014 more commonly known as \"Softshell turtles\" \u2014 were first discovered in 1826 by Fitzinger.",
+    "discovered_year": 1826,
+    "discovered_by": "Fitzinger",
+    "first_name": "Trionychidae"
+  },
+  {
+    "family_name": "Chelidae",
+    "common_name": "Austro-American sideneck turtles",
+    "summary": "The Chelidae family of turtles \u2014 more commonly known as \"Austro-American sideneck turtles\" \u2014 were first discovered in 1831 by Gray.",
+    "discovered_year": 1831,
+    "discovered_by": "Gray",
+    "first_name": "Chelidae"
+  },
+  {
+    "family_name": "Pelomedusidae",
+    "common_name": "Afro-American sideneck turtles",
+    "summary": "The Pelomedusidae family of turtles \u2014 more commonly known as \"Afro-American sideneck turtles\" \u2014 were first discovered in 1868 by Cope.",
+    "discovered_year": 1868,
+    "discovered_by": "Cope",
+    "first_name": "Pelomedusidae"
+  },
+  {
+    "family_name": "Podocnemididae",
+    "common_name": "Madagascar big-headed, Big-headed Amazon River turtle and South American sideneck river turtles",
+    "summary": "The Podocnemididae family of turtles \u2014 more commonly known as \"Madagascar big-headed, Big-headed Amazon River turtle and South American sideneck river turtles\" \u2014 were first discovered in 1869 by Gray.",
+    "discovered_year": 1869,
+    "discovered_by": "Gray",
+    "first_name": "Podocnemididae"
+  }
+]
